@@ -1,11 +1,14 @@
 
 const express = require('express')
 const app = express()
-const {products} = require('./data')
+const logger = require('./logger')
+
+
+app.use(logger)
 
 
 app.get('/',(req,res) => {
-    res.json(products)
+    res.send('Home page')
 })
 
 
